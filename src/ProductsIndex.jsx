@@ -5,9 +5,9 @@ export function ProductsIndex({ products }) {
       {products.map((product) => (
         <div key={product.id}>
           <h2>{product.name}</h2>
-          <img src={product.url} />
-          <p>Width: {product.width}</p>
-          <p>Height: {product.height}</p>
+          <img src={product.primary_image_url} alt="" width="200" />
+          <p>{product.description}</p>
+          <p>Price: {product.price}</p>
         </div>
       ))}
     </div>
