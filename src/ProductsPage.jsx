@@ -26,7 +26,7 @@ export function ProductsPage() {
 
   const handleShow = (product) => {
     console.log("handleShow", product);
-    isProductsShowVisible(true);
+    setIsProductsShowVisible(true);
     setCurrentProduct(product);
   };
 
