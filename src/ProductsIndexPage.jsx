@@ -5,7 +5,7 @@ export function ProductsIndexPage() {
   const navigate = useNavigate();
   const handleShow = (product) => {
     console.log("handleShow", product);
-    navigate(`/recipes/${product.id}`);
+    navigate(`/products/${product.id}`);
   };
   return (
     <main className="container">

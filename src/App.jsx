@@ -5,9 +5,10 @@ import { Header } from "./Header";
 import { HomePage } from "./HomePage";
 import { SignupPage } from "./SignupPage";
 import { LoginPage } from "./LoginPage";
-import { ProductsIndexPage } from "./ProductsIndexPage";
+import { ProductsPage } from "./ProductsPage";
 import { ProductsNewPage } from "./ProductsNewPage";
 import { ProductsShowPage } from "./ProductsShowPage";
+import { CartedProductsIndexPage } from "./CartedProductsIndexPage";
 import { Footer } from "./Footer";
 
 axios.defaults.baseURL = "http://localhost:3000";
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
       { path: "/", element: <HomePage /> },
       {
         path: "/products",
-        element: <ProductsIndexPage />,
+        element: <ProductsPage />,
         loader: () => axios.get("/products.json").then((response) => response.data),
       },
       { path: "/products/new", element: <ProductsNewPage /> },
@@ -35,6 +36,12 @@ const router = createBrowserRouter([
         element: <ProductsShowPage />,
         loader: ({ params }) => axios.get(`/products/${params.id}.json`).then((response) => response.data),
       },
+      {
+        path: "/carted_products",
+        element: <CartedProductsIndexPage />,
+        loader: () => axios.get("/carted_products.json").then((response) => response.data),
+      },
+
       { path: "/signup", element: <SignupPage /> },
       { path: "/login", element: <LoginPage /> },
     ],
