@@ -12,7 +12,8 @@ import { CartedProductsIndexPage } from "./CartedProductsIndexPage";
 import { OrdersShowPage } from "./OrdersShowPage";
 import { Footer } from "./Footer";
 
-axios.defaults.baseURL = "http://localhost:3000";
+axios.defaults.baseURL =
+  process.env.NODE_ENV === "development" ? "http://localhost:3000" : "<mini-capstone-api-7hv2.onrender.com>";
 axios.defaults.withCredentials = true;
 
 const router = createBrowserRouter([
